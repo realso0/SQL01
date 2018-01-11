@@ -25,7 +25,8 @@ select first_name,
         commission_pct, 
         salary
 from employees
-where commission_pct is null
+where manager_id is not null
+and commission_pct is null
 and salary>3000;
 
 /*문제4.
@@ -67,7 +68,7 @@ or first_name like '%s%';
 
 /*문제8.
 전체 부서를 출력하려고 합니다. 순서는 부서이름이 긴 순서대로 출력해 보세오.*/
-select department_name
+select *
 from departments
 order by length(department_name) desc;
 
